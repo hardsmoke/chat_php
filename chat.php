@@ -18,7 +18,7 @@ PrintMessagesFromFile($filePath);
 
 function SendMessage($login, $password, $message, $messages_filePath)
 {
-    if ($login != '' || $password != '' || $message != '')
+    if ($login != '' && $password != '' && $message != '')
     {
         $users = json_decode(file_get_contents(__DIR__ . "/users.json"), true);
         $input_password = $users[$login];
